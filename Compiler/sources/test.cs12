@@ -1,0 +1,35 @@
+/* a global var */
+int outside[1000];
+
+int yy(ref int a, int b[]){
+	/* C11 has no float type, int makes reference to any number */
+	outside[45] := 45.6;  -- this is another type of comment 
+			      -- similar to that in C++
+	return 0;
+}
+
+int main( void ){
+	/* this is the variable declaration section */
+	bool y;
+	int x;
+
+	/* and odd but legal assignment */	
+	y := false + false;
+
+	/* a simple loop stmt */
+	loop
+		if( x = y ) -- a boolean comparison
+			exit;
+		x := x + 1;
+	continue;
+	end;
+
+	/* function assignment */
+	x := yy( x, outside[4] );	
+
+	/* playing with assignments, operators and arrays */	
+	outside[100] := outside[100] * 5 + 7  + outside[4] ;	
+	outside[100] := outside[100] + outside[5] + outside[3];
+	
+	return 0;
+}

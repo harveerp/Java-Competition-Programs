@@ -1,0 +1,3 @@
+Dear Rafael,
+
+We handed in the "Is it Integration?" problem to the UVA judge and it was Accepted but when we tried to hand it into the programming challenges website, it gave us Wrong Answer. We thought we would give you a heads p before hand. 

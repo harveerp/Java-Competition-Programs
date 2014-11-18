@@ -1,0 +1,172 @@
+
+ABSTRACT SYNTAX TREE ( depth-first traversal in preorder )
+----------------------------------------------------------
+>(program)
+     |>(program)
+     |     |>(declaration)
+     |     |     |>[id]index:0, type: int
+     |     |     |>(fun_dec_tail)
+     |     |     |     |>[void]
+     |     |     |     |>(compound-stmt)
+     |     |     |     |     |>[e]
+     |     |     |     |     |>(compound-stmt'')
+     |     |     |     |     |     |>(return)
+     |     |     |     |     |     |     |>[num]lex:0 type: int
+     |     |     |     |     |     |>[e]
+     |     |>(program)
+     |     |     |>(declaration)
+     |     |     |     |>[id]index:1, type: void
+     |     |     |     |>(fun_dec_tail)
+     |     |     |     |     |>(params)
+     |     |     |     |     |     |>(param)
+     |     |     |     |     |     |     |>[id]index:2, type: int
+     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |>[e]
+     |     |     |     |     |>(compound-stmt)
+     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |>(compound-stmt'')
+     |     |     |     |     |     |     |>[null]
+     |     |     |     |     |     |     |>[e]
+     |     |     |>(program)
+     |     |     |     |>(declaration)
+     |     |     |     |     |>[id]index:3, type: bool
+     |     |     |     |     |>(fun_dec_tail)
+     |     |     |     |     |     |>[void]
+     |     |     |     |     |     |>(compound-stmt)
+     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |>(compound-stmt'')
+     |     |     |     |     |     |     |     |>(return)
+     |     |     |     |     |     |     |     |     |>[blit]lex:true type:bool
+     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |>(program)
+     |     |     |     |     |>(declaration)
+     |     |     |     |     |     |>[id]index:4, type: void
+     |     |     |     |     |     |>(fun_dec_tail)
+     |     |     |     |     |     |     |>(params)
+     |     |     |     |     |     |     |     |>(param)
+     |     |     |     |     |     |     |     |     |>[id]index:5, type: bool
+     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |>(compound-stmt)
+     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |>(compound-stmt'')
+     |     |     |     |     |     |     |     |     |>[null]
+     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |>(program)
+     |     |     |     |     |     |>(declaration)
+     |     |     |     |     |     |     |>[id]index:6, type: int
+     |     |     |     |     |     |     |>(array)
+     |     |     |     |     |     |     |     |>[num]lex:1000 type: int
+     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |>(program)
+     |     |     |     |     |     |     |>(declaration)
+     |     |     |     |     |     |     |     |>[id]index:7, type: int
+     |     |     |     |     |     |     |     |>(fun_dec_tail)
+     |     |     |     |     |     |     |     |     |>(params)
+     |     |     |     |     |     |     |     |     |     |>(param)
+     |     |     |     |     |     |     |     |     |     |     |>[id]index:8, type: ref int
+     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |>(multiparams)
+     |     |     |     |     |     |     |     |     |     |     |>(param)
+     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:9, type: int
+     |     |     |     |     |     |     |     |     |     |     |     |>[array]
+     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |>(compound-stmt)
+     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |>(compound-stmt'')
+     |     |     |     |     |     |     |     |     |     |     |>(array_assign)
+     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:6
+     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:45 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:45.6 type: int
+     |     |     |     |     |     |     |     |     |     |     |>(compound-stmt''')
+     |     |     |     |     |     |     |     |     |     |     |     |>(return)
+     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:0 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |>(program)
+     |     |     |     |     |     |     |     |>(declaration)
+     |     |     |     |     |     |     |     |     |>[id]index:10, type: int
+     |     |     |     |     |     |     |     |     |>(fun_dec_tail)
+     |     |     |     |     |     |     |     |     |     |>[void]
+     |     |     |     |     |     |     |     |     |     |>(compound-stmt)
+     |     |     |     |     |     |     |     |     |     |     |>(compound-declaration)
+     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:11, type: bool
+     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |>(compound-declaration)
+     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:12, type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |>(compound-stmt'')
+     |     |     |     |     |     |     |     |     |     |     |     |>(:=)
+     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:11
+     |     |     |     |     |     |     |     |     |     |     |     |     |>(+(main))
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[blit]lex:false type:bool
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[blit]lex:false type:bool
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |>(compound-stmt''')
+     |     |     |     |     |     |     |     |     |     |     |     |     |>(loop-stmt)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(if-stmt)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(=)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:12
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:11
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[exit]
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(loop-stmt')
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(:=)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:12
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(+(main))
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:12
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:1 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(loop-stmt')
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[continue]
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |     |>(compound-stmt''')
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(:=)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:12
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(array-or-call)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:7
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(routine_call)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:12
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(arguments')
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(array-or-call)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:6
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:4 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(compound-stmt''')
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(array_assign)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:6
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:100 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(+(main))
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(*(main))
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(array-or-call)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:6
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:100 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:5 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:7 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(+)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(array-or-call)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:6
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:4 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(compound-stmt''')
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(array_assign)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:6
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:100 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(+(main))
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(array-or-call)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:6
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:100 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(array-or-call)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:6
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:5 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(+)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(array-or-call)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[id]index:6
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:3 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(compound-stmt''')
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>(return)
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[num]lex:0 type: int
+     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |>[e]
+     |     |     |     |     |     |     |     |>[e]

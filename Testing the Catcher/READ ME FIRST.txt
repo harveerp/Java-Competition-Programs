@@ -1,0 +1,6 @@
+Dear Rafael,
+
+Program works but it does not work for all the cases
+Such as: 159, 159, 157, 157, 156, 156, 155, 153, 149, 149, 149,
+149, 148, 147, 146, 146
+
